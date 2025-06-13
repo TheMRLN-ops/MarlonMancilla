@@ -1,56 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Marlon Mancilla | Portfolio</title>
-        <link rel="icon" type="image/png" href="favicon-32x32.png" />
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marlon Mancilla | Portfolio</title>
+    <link rel="icon" type="image/png" href="favicon-32x32.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-  <body class="bg-gray-100 text-gray-800 font-sans">
+  <body class="bg-gray-100 text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-100">
     <!-- Hero Section -->
-    <header class="bg-white shadow-md">
+    <header class="bg-white shadow-md dark:bg-gray-800">
       <div class="max-w-5xl mx-auto p-6 flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-blue-600">Marlon Mancilla</h1>
+        <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-400">Marlon Mancilla</h1>
         <nav class="space-x-6">
-          <a href="#about" class="text-gray-700 hover:text-blue-600">About</a>
-          <a href="#projects" class="text-gray-700 hover:text-blue-600">Projects</a>
-          <a href="#contact" class="text-gray-700 hover:text-blue-600">Contact</a>
+          <a
+            href="#about"
+            class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+            >About</a
+          >
+          <a
+            href="#projects"
+            class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+            >Projects</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400"
+            >Contact</a
+          >
         </nav>
+        <button
+          id="toggleDark"
+          class="bg-gray-200 text-sm px-4 py-2 rounded hover:bg-gray-300 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 transition"
+        >
+          Toggle Dark Mode
+        </button>
       </div>
     </header>
 
     <!-- Intro Section -->
-    <section class="bg-blue-50 py-20">
+    <section class="bg-blue-50 py-20 dark:bg-gray-800">
       <div class="max-w-4xl mx-auto text-center px-6">
         <h2 class="text-4xl font-bold mb-4">Hi, I'm Marlon 👋</h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Physics graduate, tech enthusiast, and problem-solver focused on turning ideas into real-world solutions through data, code, and innovation.
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto dark:text-gray-300">
+          Physics graduate, tech enthusiast, and problem-solver focused on
+          turning ideas into real-world solutions through data, code, and
+          innovation.
         </p>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
+    <section id="about" class="py-16 bg-white dark:bg-gray-900">
       <div class="max-w-4xl mx-auto px-6">
-        <h3 class="text-2xl font-semibold mb-4">About Me</h3>
-        <p class="text-gray-700 leading-relaxed">
-          I’m passionate about engineering, programming, and building meaningful projects. With a solid background in physics and hands-on experience in research and development, I love exploring new tools, collaborating with others, and constantly learning.
+        <h3 class="text-2xl font-semibold mb-4 dark:text-gray-200">About Me</h3>
+        <p class="text-gray-700 leading-relaxed dark:text-gray-300">
+          I’m passionate about engineering, programming, and building meaningful
+          projects. With a solid background in physics and hands-on experience
+          in research and development, I love exploring new tools,
+          collaborating with others, and constantly learning.
         </p>
       </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-gray-50">
+    <section id="projects" class="py-16 bg-gray-50 dark:bg-gray-800">
       <div class="max-w-4xl mx-auto px-6">
-        <h3 class="text-2xl font-semibold mb-6">Projects</h3>
+        <h3 class="text-2xl font-semibold mb-6 dark:text-gray-200">Projects</h3>
         <div class="grid gap-6 md:grid-cols-2">
           <!-- Example Project Card -->
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <h4 class="text-xl font-bold mb-2">Radar with Arduino</h4>
-            <p class="text-gray-600">
-              A scanning radar system using an ultrasonic sensor and servo motor, visualized in real-time with Python. Designed for a senior project.
+          <div class="bg-white p-6 rounded-lg shadow-md dark:bg-gray-700">
+            <h4 class="text-xl font-bold mb-2 dark:text-gray-100">
+              Radar with Arduino
+            </h4>
+            <p class="text-gray-600 dark:text-gray-300">
+              A scanning radar system using an ultrasonic sensor and servo
+              motor, visualized in real-time with Python. Designed for a senior
+              project.
             </p>
           </div>
           <!-- Add more project cards here -->
@@ -59,10 +86,12 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white">
+    <section id="contact" class="py-16 bg-white dark:bg-gray-900">
       <div class="max-w-4xl mx-auto px-6 text-center">
-        <h3 class="text-2xl font-semibold mb-4">Get in Touch</h3>
-        <p class="text-gray-600 mb-6">
+        <h3 class="text-2xl font-semibold mb-4 dark:text-gray-200">
+          Get in Touch
+        </h3>
+        <p class="text-gray-600 mb-6 dark:text-gray-300">
           Interested in collaborating or just want to connect? Reach out!
         </p>
         <a
@@ -73,8 +102,30 @@
       </div>
     </section>
 
-    <footer class="text-center py-6 text-gray-500 text-sm bg-gray-100">
+    <footer
+      class="text-center py-6 text-gray-500 text-sm bg-gray-100 dark:bg-gray-900 dark:text-gray-400"
+    >
       © 2025 Marlon Mancilla. All rights reserved.
     </footer>
+
+    <script>
+      const toggleDarkBtn = document.getElementById("toggleDark");
+      const html = document.documentElement;
+
+      // Load saved mode on page load
+      if (localStorage.getItem("theme") === "dark") {
+        html.classList.add("dark");
+      }
+
+      toggleDarkBtn.addEventListener("click", () => {
+        if (html.classList.contains("dark")) {
+          html.classList.remove("dark");
+          localStorage.setItem("theme", "light");
+        } else {
+          html.classList.add("dark");
+          localStorage.setItem("theme", "dark");
+        }
+      });
+    </script>
   </body>
 </html>
