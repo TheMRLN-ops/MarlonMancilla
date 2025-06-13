@@ -177,6 +177,30 @@
         background-color: #e5e7eb;
       }
 
+      .hero-description-box {
+        background-color: rgba(255, 255, 255, 0.7); /* Slightly more transparent white */
+        padding: 1rem 1.5rem; /* Adjust padding as needed */
+        border-radius: 0.75rem; /* Adjust the radius */
+        display: inline-block; /* Essential to make the background wrap the content */
+        margin-top: 1rem; /* Add some space between the H2 and this box */
+        color: #4b5563; /* Ensure text color is readable */
+      }
+      
+      .dark .hero-description-box {
+        background-color: rgba(31, 41, 55, 0.7); /* Slightly more transparent dark */
+        color: #d1d5db;
+      }
+      
+      /* Adjust the existing .hero p rule to avoid conflict if you had it.
+         If .hero p had a background, this new class would override it.
+         You might need to remove background properties from .hero p if they conflict.
+      */
+      .hero p {
+        /* Remove background-related properties if they conflict with .hero-description-box */
+        font-size: 1.125rem;
+        line-height: 1.6;
+      }
+
       .dark .hero-image:hover {
         border-color: #60a5fa;
         background-color: #4b5563;
@@ -187,7 +211,7 @@
        font-weight: 700;
        margin-bottom: 1rem;
        color: #1f2937;
-       background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+       background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
        padding: 0.5rem 1rem; /* Adjust padding as needed */
        border-radius: 0.5rem; /* Adjust the radius for more or less rounded corners */
        display: inline-block; /* To only wrap the text */
@@ -411,7 +435,7 @@
       <div class="hero-container">
         <div class="hero-content">
           <h2>Hi, I'm Marlon 👋</h2>
-          <p>
+          <p class="hero-description-box">
             Physics graduate, tech enthusiast, and problem-solver focused on
             turning ideas into real-world solutions through data, code, and
             innovation.
