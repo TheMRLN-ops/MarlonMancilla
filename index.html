@@ -134,6 +134,53 @@
         background-color: #1f2937;
       }
 
+      .hero-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        max-width: 64rem;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .hero-content {
+        flex: 1;
+        text-align: left;
+      }
+
+      .hero-image {
+        flex: 0 0 250px;
+        width: 250px;
+        height: 300px;
+        background-color: #d1d5db;
+        border: 2px dashed #9ca3af;
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #6b7280;
+        font-size: 0.875rem;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .dark .hero-image {
+        background-color: #374151;
+        border-color: #6b7280;
+        color: #9ca3af;
+      }
+
+      .hero-image:hover {
+        border-color: #2563eb;
+        background-color: #e5e7eb;
+      }
+
+      .dark .hero-image:hover {
+        border-color: #60a5fa;
+        background-color: #4b5563;
+      }
+
       .hero h2 {
         font-size: 2.5rem;
         font-weight: 700;
@@ -148,12 +195,29 @@
       .hero p {
         font-size: 1.125rem;
         color: #4b5563;
-        max-width: 42rem;
-        margin: 0 auto;
+        line-height: 1.6;
       }
 
       .dark .hero p {
         color: #d1d5db;
+      }
+
+      /* Responsive Hero */
+      @media (max-width: 768px) {
+        .hero-container {
+          flex-direction: column;
+          text-align: center;
+        }
+        
+        .hero-content {
+          text-align: center;
+        }
+        
+        .hero-image {
+          flex: 0 0 200px;
+          width: 200px;
+          height: 240px;
+        }
       }
 
       /* About Section */
@@ -337,13 +401,18 @@
 
     <!-- Intro Section -->
     <section class="hero">
-      <div class="section-container">
-        <h2>Hi, I'm Marlon 👋</h2>
-        <p>
-          Physics graduate, tech enthusiast, and problem-solver focused on
-          turning ideas into real-world solutions through data, code, and
-          innovation.
-        </p>
+      <div class="hero-container">
+        <div class="hero-content">
+          <h2>Hi, I'm Marlon 👋</h2>
+          <p>
+            Physics graduate, tech enthusiast, and problem-solver focused on
+            turning ideas into real-world solutions through data, code, and
+            innovation.
+          </p>
+        </div>
+        <div class="hero-image">
+          Your Photo<br>Goes Here
+        </div>
       </div>
     </section>
 
