@@ -421,6 +421,18 @@
     </footer>
 
     <script>
+      // Force page to start at the top when loading
+      window.addEventListener('beforeunload', function() {
+        window.scrollTo(0, 0);
+      });
+      
+      // Also ensure we start at top on page load
+      window.addEventListener('load', function() {
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+        }, 50);
+      });
+      
       const toggleDarkBtn = document.getElementById("toggleDark");
       const html = document.documentElement;
       
