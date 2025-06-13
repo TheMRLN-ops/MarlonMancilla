@@ -5,38 +5,340 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marlon Mancilla | Portfolio</title>
     <link rel="icon" type="image/png" href="favicon-32x32.png" />
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
+    <style>
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-    </script>
-    <script src="https://cdn.tailwindcss.com"></script>
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        line-height: 1.6;
+        color: #1f2937;
+        background-color: #f3f4f6;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      /* Dark Mode */
+      .dark body {
+        background-color: #111827;
+        color: #f9fafb;
+      }
+
+      /* Header */
+      header {
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        transition: background-color 0.3s ease;
+      }
+
+      .dark header {
+        background-color: #1f2937;
+      }
+
+      .header-container {
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #2563eb;
+        text-decoration: none;
+      }
+
+      .dark .logo {
+        color: #60a5fa;
+      }
+
+      /* Navigation */
+      nav {
+        display: flex;
+        gap: 2rem;
+      }
+
+      nav a {
+        color: #374151;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #2563eb;
+      }
+
+      .dark nav a {
+        color: #d1d5db;
+      }
+
+      .dark nav a:hover {
+        color: #60a5fa;
+      }
+
+      /* Dark Mode Toggle Button */
+      .toggle-btn {
+        background-color: #e5e7eb;
+        color: #374151;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 0.375rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .toggle-btn:hover {
+        background-color: #d1d5db;
+      }
+
+      .dark .toggle-btn {
+        background-color: #374151;
+        color: #f9fafb;
+      }
+
+      .dark .toggle-btn:hover {
+        background-color: #4b5563;
+      }
+
+      /* Sections */
+      section {
+        padding: 4rem 0;
+      }
+
+      .section-container {
+        max-width: 64rem;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      /* Hero Section */
+      .hero {
+        background-color: #eff6ff;
+        text-align: center;
+        padding: 5rem 0;
+      }
+
+      .dark .hero {
+        background-color: #1f2937;
+      }
+
+      .hero h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #1f2937;
+      }
+
+      .dark .hero h2 {
+        color: #f9fafb;
+      }
+
+      .hero p {
+        font-size: 1.125rem;
+        color: #4b5563;
+        max-width: 42rem;
+        margin: 0 auto;
+      }
+
+      .dark .hero p {
+        color: #d1d5db;
+      }
+
+      /* About Section */
+      .about {
+        background-color: #ffffff;
+      }
+
+      .dark .about {
+        background-color: #111827;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #1f2937;
+      }
+
+      .dark .section-title {
+        color: #e5e7eb;
+      }
+
+      .about p {
+        color: #374151;
+        line-height: 1.75;
+      }
+
+      .dark .about p {
+        color: #d1d5db;
+      }
+
+      /* Projects Section */
+      .projects {
+        background-color: #f9fafb;
+      }
+
+      .dark .projects {
+        background-color: #1f2937;
+      }
+
+      .projects-grid {
+        display: grid;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .projects-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .project-card {
+        background-color: #ffffff;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
+
+      .dark .project-card {
+        background-color: #374151;
+      }
+
+      .project-title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: #1f2937;
+      }
+
+      .dark .project-title {
+        color: #f9fafb;
+      }
+
+      .project-description {
+        color: #4b5563;
+      }
+
+      .dark .project-description {
+        color: #d1d5db;
+      }
+
+      /* Contact Section */
+      .contact {
+        background-color: #ffffff;
+        text-align: center;
+      }
+
+      .dark .contact {
+        background-color: #111827;
+      }
+
+      .contact p {
+        color: #4b5563;
+        margin-bottom: 1.5rem;
+      }
+
+      .dark .contact p {
+        color: #d1d5db;
+      }
+
+      .cta-button {
+        display: inline-block;
+        background-color: #2563eb;
+        color: #ffffff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background-color: #1d4ed8;
+        transform: translateY(-1px);
+      }
+
+      /* Footer */
+      footer {
+        background-color: #f3f4f6;
+        color: #6b7280;
+        text-align: center;
+        padding: 1.5rem;
+        font-size: 0.875rem;
+      }
+
+      .dark footer {
+        background-color: #111827;
+        color: #9ca3af;
+      }
+
+      /* Smooth Scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .header-container {
+          flex-direction: column;
+          gap: 1rem;
+        }
+        
+        nav {
+          gap: 1rem;
+        }
+        
+        .hero h2 {
+          font-size: 2rem;
+        }
+        
+        .hero p {
+          font-size: 1rem;
+        }
+      }
+    </style>
   </head>
 
-  <body class="bg-gray-100 text-gray-800 font-sans dark:bg-gray-900 dark:text-gray-100">
+  <body>
     <!-- Hero Section -->
-    <header class="bg-white shadow-md dark:bg-gray-800">
-      <div class="max-w-5xl mx-auto p-6 flex justify-between items-center">
-        <h1 class="text-2xl font-bold text-blue-600 dark:text-blue-400">Marlon Mancilla</h1>
-        <nav class="space-x-6">
-          <a href="#about" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">About</a>
-          <a href="#projects" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">Projects</a>
-          <a href="#contact" class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">Contact</a>
+    <header>
+      <div class="header-container">
+        <h1 class="logo">Marlon Mancilla</h1>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
         </nav>
-        <button
-          id="toggleDark"
-          class="bg-gray-200 text-sm px-4 py-2 rounded hover:bg-gray-300 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600 transition"
-        >
+        <button id="toggleDark" class="toggle-btn">
           Toggle Dark Mode
         </button>
       </div>
     </header>
 
     <!-- Intro Section -->
-    <section class="bg-blue-50 py-20 dark:bg-gray-800">
-      <div class="max-w-4xl mx-auto text-center px-6">
-        <h2 class="text-4xl font-bold mb-4">Hi, I'm Marlon 👋</h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto dark:text-gray-300">
+    <section class="hero">
+      <div class="section-container">
+        <h2>Hi, I'm Marlon 👋</h2>
+        <p>
           Physics graduate, tech enthusiast, and problem-solver focused on
           turning ideas into real-world solutions through data, code, and
           innovation.
@@ -45,10 +347,10 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-16 bg-white dark:bg-gray-900">
-      <div class="max-w-4xl mx-auto px-6">
-        <h3 class="text-2xl font-semibold mb-4 dark:text-gray-200">About Me</h3>
-        <p class="text-gray-700 leading-relaxed dark:text-gray-300">
+    <section id="about" class="about">
+      <div class="section-container">
+        <h3 class="section-title">About Me</h3>
+        <p>
           I'm passionate about engineering, programming, and building meaningful
           projects. With a solid background in physics and hands-on experience
           in research and development, I love exploring new tools,
@@ -58,25 +360,25 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-gray-50 dark:bg-gray-800">
-      <div class="max-w-4xl mx-auto px-6">
-        <h3 class="text-2xl font-semibold mb-6 dark:text-gray-200">Projects</h3>
-        <div class="grid gap-6 md:grid-cols-2">
+    <section id="projects" class="projects">
+      <div class="section-container">
+        <h3 class="section-title">Projects</h3>
+        <div class="projects-grid">
           <!-- Example Project Card -->
-          <div class="bg-white p-6 rounded-lg shadow-md dark:bg-gray-700">
-            <h4 class="text-xl font-bold mb-2 dark:text-gray-100">
+          <div class="project-card">
+            <h4 class="project-title">
               Sonar with Arduino
             </h4>
-            <p class="text-gray-600 dark:text-gray-300">
+            <p class="project-description">
               A scanning radar system using an ultrasonic sensor and servo
               motor, visualized in real-time with Python.
             </p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-md dark:bg-gray-700">
-            <h4 class="text-xl font-bold mb-2 dark:text-gray-100">
+          <div class="project-card">
+            <h4 class="project-title">
               Interferometry Project
             </h4>
-            <p class="text-gray-600 dark:text-gray-300">
+            <p class="project-description">
               I built an interferometry system to observe live cultivated cells, capturing nanoscale structural changes without physical contact.
             </p>
           </div>
@@ -87,23 +389,17 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white dark:bg-gray-900">
-      <div class="max-w-4xl mx-auto px-6 text-center">
-        <h3 class="text-2xl font-semibold mb-4 dark:text-gray-200">Get in Touch</h3>
-        <p class="text-gray-600 mb-6 dark:text-gray-300">
+    <section id="contact" class="contact">
+      <div class="section-container">
+        <h3 class="section-title">Get in Touch</h3>
+        <p>
           Interested in collaborating or just want to connect? Reach out!
         </p>
-        <a
-          href="mailto:marlonmancillaz01@gmail.com"
-          class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
-          >Email Me</a
-        >
+        <a href="mailto:your.email@example.com" class="cta-button">Email Me</a>
       </div>
     </section>
 
-    <footer
-      class="text-center py-6 text-gray-500 text-sm bg-gray-100 dark:bg-gray-900 dark:text-gray-400"
-    >
+    <footer>
       © 2025 Marlon Mancilla. All rights reserved.
     </footer>
 
