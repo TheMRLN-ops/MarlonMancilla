@@ -329,7 +329,7 @@
           <a href="#contact">Contact</a>
         </nav>
         <button id="toggleDark" class="toggle-btn">
-          Toggle Dark Mode
+          🌙 Dark Mode
         </button>
       </div>
     </header>
@@ -382,6 +382,14 @@
               I built an interferometry system to observe live cultivated cells, capturing nanoscale structural changes without physical contact.
             </p>
           </div>
+                    <div class="project-card">
+            <h4 class="project-title">
+              AI Calendar Assistant
+            </h4>
+            <p class="project-description">
+              Built a smart calendar agent that understands natural language to move, prioritize, and optimize events using Python and Google Calendar API.
+            </p>
+          </div>
               
           <!-- Add more project cards here -->
         </div>
@@ -409,6 +417,18 @@
       
       // Track dark mode state in memory (initialize based on current state)
       let isDarkMode = html.classList.contains("dark");
+      
+      // Function to update button text and icon
+      function updateButtonText() {
+        if (isDarkMode) {
+          toggleDarkBtn.innerHTML = "☀️ Light Mode";
+        } else {
+          toggleDarkBtn.innerHTML = "🌙 Dark Mode";
+        }
+      }
+      
+      // Set initial button text
+      updateButtonText();
 
       // Toggle dark mode function
       toggleDarkBtn.addEventListener("click", () => {
@@ -419,6 +439,9 @@
         } else {
           html.classList.remove("dark");
         }
+        
+        // Update button text after toggle
+        updateButtonText();
       });
     </script>
   </body>
