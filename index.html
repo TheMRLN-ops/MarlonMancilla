@@ -49,7 +49,7 @@
       <div class="max-w-4xl mx-auto px-6">
         <h3 class="text-2xl font-semibold mb-4 dark:text-gray-200">About Me</h3>
         <p class="text-gray-700 leading-relaxed dark:text-gray-300">
-          I’m passionate about engineering, programming, and building meaningful
+          I'm passionate about engineering, programming, and building meaningful
           projects. With a solid background in physics and hands-on experience
           in research and development, I love exploring new tools,
           collaborating with others, and constantly learning.
@@ -110,22 +110,18 @@
     <script>
       const toggleDarkBtn = document.getElementById("toggleDark");
       const html = document.documentElement;
+      
+      // Track dark mode state in memory (initialize based on current state)
+      let isDarkMode = html.classList.contains("dark");
 
-      // Check localStorage for saved theme on page load:
-      if (localStorage.getItem("theme") === "dark") {
-        html.classList.add("dark");
-      } else {
-        html.classList.remove("dark");
-      }
-
-      // Toggle dark mode and save preference
+      // Toggle dark mode function
       toggleDarkBtn.addEventListener("click", () => {
-        if (html.classList.contains("dark")) {
-          html.classList.remove("dark");
-          localStorage.setItem("theme", "light");
-        } else {
+        isDarkMode = !isDarkMode;
+        
+        if (isDarkMode) {
           html.classList.add("dark");
-          localStorage.setItem("theme", "dark");
+        } else {
+          html.classList.remove("dark");
         }
       });
     </script>
