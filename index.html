@@ -85,6 +85,30 @@
       .dark nav a:hover {
         color: #60a5fa;
       }
+      
+      .nav-cv-button {
+        background-color: #2563eb;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.375rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        margin-left: 0.5rem;
+      }
+      
+      .nav-cv-button:hover {
+        background-color: #1d4ed8;
+        transform: translateY(-1px);
+      }
+      
+      .dark .nav-cv-button {
+        background-color: #60a5fa;
+        color: #111827;
+      }
+      
+      .dark .nav-cv-button:hover {
+        background-color: #3b82f6;
+      }
 
       /* Dark Mode Toggle Button */
       .toggle-btn {
@@ -435,6 +459,7 @@
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
+          <a href="Resume_MarlonM.pdf" download class="nav-cv-button">Download CV</a>
         </nav>
         <button id="toggleDark" class="toggle-btn">
           🌙 Dark Mode
@@ -548,6 +573,12 @@
     </footer>
 
     <script>
+
+      document.querySelector('.nav-cv-button').addEventListener('click', function() {
+        // Send analytics event
+        console.log('CV downloaded');
+        // or use Google Analytics: gtag('event', 'download', {'event_category': 'CV'});
+      });
       // Force page to start at the top when loading
       window.addEventListener('beforeunload', function() {
         window.scrollTo(0, 0);
