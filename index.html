@@ -111,6 +111,25 @@
       }
 
       /* Expandable Projects */
+      .project-summary {
+        cursor: pointer;
+        position: relative;
+        padding-right: 2rem;
+      }
+
+      .project-summary::after {
+        content: '↓';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease;
+      }
+
+      .project-card.active .project-summary::after {
+        transform: translateY(-50%) rotate(180deg);
+      }
+
       .project-details {
         max-height: 0;
         overflow: hidden;
@@ -119,7 +138,7 @@
       }
       
       .project-card.active .project-details {
-        max-height: 500px; /* Adjust based on your content */
+        max-height: 500px;
         padding: 1rem;
         border-top: 1px solid #e5e7eb;
       }
@@ -183,7 +202,7 @@
       
       @media (max-width: 768px) {
         .project-card.active .project-details {
-          max-height: 800px; /* More space for mobile */
+          max-height: 800px;
         }
         
         .project-links {
@@ -283,27 +302,17 @@
       }
 
       .hero-description-box {
-        background-color: rgba(255, 255, 255, 0.7); /* Slightly more transparent white */
-        padding: 1rem 1.5rem; /* Adjust padding as needed */
-        border-radius: 0.75rem; /* Adjust the radius */
-        display: inline-block; /* Essential to make the background wrap the content */
-        margin-top: 1rem; /* Add some space between the H2 and this box */
-        color: #4b5563; /* Ensure text color is readable */
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 1rem 1.5rem;
+        border-radius: 0.75rem;
+        display: inline-block;
+        margin-top: 1rem;
+        color: #4b5563;
       }
       
       .dark .hero-description-box {
-        background-color: rgba(31, 41, 55, 0.7); /* Slightly more transparent dark */
+        background-color: rgba(31, 41, 55, 0.7);
         color: #d1d5db;
-      }
-      
-      /* Adjust the existing .hero p rule to avoid conflict if you had it.
-         If .hero p had a background, this new class would override it.
-         You might need to remove background properties from .hero p if they conflict.
-      */
-      .hero p {
-        /* Remove background-related properties if they conflict with .hero-description-box */
-        font-size: 1.125rem;
-        line-height: 1.6;
       }
 
       .dark .hero-image:hover {
@@ -316,15 +325,15 @@
        font-weight: 700;
        margin-bottom: 1rem;
        color: #1f2937;
-       background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent white background */
-       padding: 0.5rem 1rem; /* Adjust padding as needed */
-       border-radius: 0.5rem; /* Adjust the radius for more or less rounded corners */
-       display: inline-block; /* To only wrap the text */
+       background-color: rgba(255, 255, 255, 0.6);
+       padding: 0.5rem 1rem;
+       border-radius: 0.5rem;
+       display: inline-block;
       }
 
       .dark .hero h2 {
        color: #f9fafb;
-       background-color: rgba(31, 41, 55, 0.8); /* Semi-transparent dark background */
+       background-color: rgba(31, 41, 55, 0.8);
       }
 
       .hero p {
@@ -506,7 +515,7 @@
       /* Smooth Scrolling */
       html {
         scroll-behavior: smooth;
-        scroll-padding-top: 100px; /* Account for sticky header */
+        scroll-padding-top: 100px;
       }
 
       /* Responsive Design */
@@ -583,7 +592,7 @@
       <div class="section-container">
         <h3 class="section-title">Projects</h3>
         <div class="projects-grid">
-          <!-- Example Project Card -->
+          <!-- Project 1 -->
           <div class="project-card">
             <div class="project-summary">
               <h4 class="project-title">Sonar with Arduino</h4>
@@ -593,7 +602,6 @@
               </p>
             </div>
             <div class="project-details">
-              <!-- Hidden details that will expand -->
               <div class="tech-stack">
                 <span class="tech-tag">Arduino</span>
                 <span class="tech-tag">Python</span>
@@ -605,45 +613,110 @@
               </div>
             </div>
           </div>
+
+          <!-- Project 2 -->
           <div class="project-card">
-            <h4 class="project-title">
-              Interferometry Project
-            </h4>
-            <p class="project-description">
-              I built an interferometry system to observe live cultivated cells, capturing nanoscale structural changes without physical contact.
-            </p>
+            <div class="project-summary">
+              <h4 class="project-title">Interferometry Project</h4>
+              <p class="project-description">
+                I built an interferometry system to observe live cultivated cells, capturing nanoscale structural changes without physical contact.
+              </p>
+            </div>
+            <div class="project-details">
+              <div class="tech-stack">
+                <span class="tech-tag">Optics</span>
+                <span class="tech-tag">MATLAB</span>
+                <span class="tech-tag">Lab Equipment</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="code-link">View Code</a>
+                <a href="#" class="demo-link">See Photos</a>
+              </div>
+            </div>
           </div>
+
+          <!-- Project 3 -->
           <div class="project-card">
-            <h4 class="project-title">
-              AI Calendar Assistant
-            </h4>
-            <p class="project-description">
-              Built a smart calendar agent that understands natural language to move, prioritize, and optimize events using Python and Google Calendar API.
-            </p>
+            <div class="project-summary">
+              <h4 class="project-title">AI Calendar Assistant</h4>
+              <p class="project-description">
+                Built a smart calendar agent that understands natural language to move, prioritize, and optimize events using Python and Google Calendar API.
+              </p>
+            </div>
+            <div class="project-details">
+              <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">NLP</span>
+                <span class="tech-tag">Google API</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="code-link">View Code</a>
+                <a href="#" class="demo-link">Try Demo</a>
+              </div>
+            </div>
           </div>
+
+          <!-- Project 4 -->
           <div class="project-card">
-            <h4 class="project-title">
-              Arduino Blood Pressure Monitor
-            </h4>
-            <p class="project-description">
-              Designed and programmed a blood pressure sensor using Arduino and C++, enabling real-time measurements from a medical-grade sensor.
-            </p>
+            <div class="project-summary">
+              <h4 class="project-title">Arduino Blood Pressure Monitor</h4>
+              <p class="project-description">
+                Designed and programmed a blood pressure sensor using Arduino and C++, enabling real-time measurements from a medical-grade sensor.
+              </p>
+            </div>
+            <div class="project-details">
+              <div class="tech-stack">
+                <span class="tech-tag">Arduino</span>
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">Medical Devices</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="code-link">View Code</a>
+                <a href="#" class="demo-link">See Demo</a>
+              </div>
+            </div>
           </div>
+
+          <!-- Project 5 -->
           <div class="project-card">
-            <h4 class="project-title">
-              Wave Equation Simulation
-            </h4>
-            <p class="project-description">
-              A MATLAB simulation exploring the wave equation's behavior across different atomic numbers.
-            </p>
+            <div class="project-summary">
+              <h4 class="project-title">Wave Equation Simulation</h4>
+              <p class="project-description">
+                A MATLAB simulation exploring the wave equation's behavior across different atomic numbers.
+              </p>
+            </div>
+            <div class="project-details">
+              <div class="tech-stack">
+                <span class="tech-tag">MATLAB</span>
+                <span class="tech-tag">Numerical Methods</span>
+                <span class="tech-tag">Physics</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="code-link">View Code</a>
+                <a href="#" class="demo-link">See Simulation</a>
+              </div>
+            </div>
           </div>
+
+          <!-- Project 6 -->
           <div class="project-card">
-            <h4 class="project-title">
-              Gravity Wave Data System
-            </h4>
-            <p class="project-description">
-              Custom code for a built camera to acquire and process data for gravity wave research.
-            </p>
+            <div class="project-summary">
+              <h4 class="project-title">Gravity Wave Data System</h4>
+              <p class="project-description">
+                Custom code for a built camera to acquire and process data for gravity wave research.
+              </p>
+            </div>
+            <div class="project-details">
+              <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Data Acquisition</span>
+                <span class="tech-tag">Camera Systems</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="code-link">View Code</a>
+                <a href="#" class="demo-link">See Results</a>
+              </div>
+            </div>
           </div>
         </div>
         <p class="and-more">And more...</p>
@@ -666,6 +739,7 @@
     </footer>
 
     <script>
+      // Project Card Expansion
       document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('click', function(e) {
           // Don't toggle if clicking on links inside the card
@@ -680,14 +754,19 @@
           
           // Toggle this card
           this.classList.toggle('active');
+          
+          // Scroll to project if it's expanding (for mobile)
+          if (this.classList.contains('active') && window.innerWidth < 768) {
+            this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
         });
       });
 
+      // CV Download Tracking
       document.querySelector('.nav-cv-button').addEventListener('click', function() {
-        // Send analytics event
         console.log('CV downloaded');
-        // or use Google Analytics: gtag('event', 'download', {'event_category': 'CV'});
       });
+
       // Force page to start at the top when loading
       window.addEventListener('beforeunload', function() {
         window.scrollTo(0, 0);
@@ -700,35 +779,21 @@
         }, 50);
       });
       
+      // Dark Mode Toggle
       const toggleDarkBtn = document.getElementById("toggleDark");
       const html = document.documentElement;
       
-      // Track dark mode state in memory (initialize based on current state)
       let isDarkMode = html.classList.contains("dark");
       
-      // Function to update button text and icon
       function updateButtonText() {
-        if (isDarkMode) {
-          toggleDarkBtn.innerHTML = "☀️ Light Mode";
-        } else {
-          toggleDarkBtn.innerHTML = "🌙 Dark Mode";
-        }
+        toggleDarkBtn.innerHTML = isDarkMode ? "☀️ Light Mode" : "🌙 Dark Mode";
       }
       
-      // Set initial button text
       updateButtonText();
 
-      // Toggle dark mode function
       toggleDarkBtn.addEventListener("click", () => {
         isDarkMode = !isDarkMode;
-        
-        if (isDarkMode) {
-          html.classList.add("dark");
-        } else {
-          html.classList.remove("dark");
-        }
-        
-        // Update button text after toggle
+        html.classList.toggle("dark");
         updateButtonText();
       });
     </script>
