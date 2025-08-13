@@ -354,54 +354,61 @@
         padding: 2rem;
       }
       
-      /* Carousel container */
+      /* Main carousel container */
       .hero-image-carousel {
         position: relative;
-        width: 250px;
-        height: 300px;
+        width: 80%; /* Or whatever width you want */
+        max-width: 800px;
+        margin: auto;
+      }
+      
+      /* This container hides the parts of the track that are off-screen */
+      .carousel-track-container {
         overflow: hidden;
-        border-radius: 0.75rem;
-        flex-shrink: 0;
+        border-radius: 0.75rem; /* Apply border-radius here */
       }
       
-      /* Images inside the carousel */
-      .carousel-image {
-        position: absolute;
-        top: 0;
-        left: 0;
+      /* The track holds all the slides and moves left/right */
+      .carousel-track {
+        display: flex; /* Aligns slides horizontally */
+        transition: transform 0.5s ease-in-out; /* Smooth sliding animation */
+      }
+      
+      /* Each slide takes up the full width of the container */
+      .carousel-slide {
+        flex: 0 0 100%;
         width: 100%;
-        height: 100%;
+      }
+      
+      /* Your image styles - applied to all images in the carousel */
+      .carousel-slide img {
+        width: 100%;
+        height: 100%; /* Adjust if needed, e.g., auto */
         object-fit: cover;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+        display: block; /* Removes extra space below image */
       }
       
-      .carousel-image.active {
-        opacity: 1;
-        visibility: visible;
-      }
-      
-      /* Navigation buttons */
-      .carousel-btn {
+      /* Styling for the navigation buttons */
+      .carousel-button {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background-color: rgba(0,0,0,0.5);
+        background-color: rgba(0, 0, 0, 0.5);
         color: white;
         border: none;
-        padding: 0.5rem;
+        font-size: 2rem;
+        padding: 0.5rem 1rem;
         cursor: pointer;
-        font-size: 1.2rem;
-        border-radius: 50%;
-        z-index: 2;
+        z-index: 10;
+        border-radius: 0.5rem;
       }
       
-      .carousel-btn.prev { left: 10px; }
-      .carousel-btn.next { right: 10px; }
+      .carousel-button.prev {
+        left: 1rem;
+      }
       
-      .carousel-btn:hover {
-        background-color: rgba(0,0,0,0.8);
+      .carousel-button.next {
+        right: 1rem;
       }
 
 
@@ -628,28 +635,53 @@
             innovation.
           </p>
         </div>
-        <div class="hero-image-carousel">
-          <img src="Foto_mia.jpg" alt="Marlon Mancilla" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; class="carousel-image active"">
-          <img src="Amigos.jpg" alt="Amigos" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; class="carousel-image active"">
-          <img src="Cowboy_Pic.JPG" alt="Cowboy_pic" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; class="carousel-image active"">
-          <img src="Foto_Jpn.JPG" alt="Foto Japon" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; class="carousel-image active"">
-          <img src="Foto_Jpn2.JPEG" alt="Foto Japon 2" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; class="carousel-image active"">
-          <img src="Foto_Jpn3.JPG" alt="Foto Japon 3" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; class="carousel-image active"">
-          <img src="Foto_Jpn4.JPG" alt="Foto Japon 4" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; class="carousel-image active"">
-          <img src="Grad_Bache.JPG" alt="Graduation Pic" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; class="carousel-image active"">
-          <img src="Grad_PIC.JPG" alt="Graduation" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; class="carousel-image active"">
-          <img src="Grad_asso.jpg" alt="Waeso" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; class="carousel-image active"">
-          <img src="Sports_Pic.JPG" alt="Sports" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; class="carousel-image active"">
-          <img src="Waeso_pic.jpg" alt="Waeso 2" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; class="carousel-image active"">
-          <img src="Wolvering.JPG" alt="Wolvering" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem; class="carousel-image active"">
-          
-          
-          
-          <button class="carousel-btn prev">❮</button>
-          <button class="carousel-btn next">❯</button>
+      <div class="hero-image-carousel">
+        <button class="carousel-button prev">&#10094;</button>
+        <div class="carousel-track-container">
+          <div class="carousel-track">
+            <div class="carousel-slide">
+              <img src="Foto_mia.jpg" alt="Marlon Mancilla">
+            </div>
+            <div class="carousel-slide">
+              <img src="Amigos.jpg" alt="Amigos">
+            </div>
+            <div class="carousel-slide">
+              <img src="Cowboy_Pic.JPG" alt="Cowboy_pic">
+            </div>
+            <div class="carousel-slide">
+              <img src="Foto_Jpn.JPG" alt="Foto Japon">
+            </div>
+            <div class="carousel-slide">
+              <img src="Foto_Jpn2.JPEG" alt="Foto Japon 2">
+            </div>
+            <div class="carousel-slide">
+              <img src="Foto_Jpn3.JPG" alt="Foto Japon 3">
+            </div>
+            <div class="carousel-slide">
+              <img src="Foto_Jpn4.JPG" alt="Foto Japon 4">
+            </div>
+            <div class="carousel-slide">
+              <img src="Grad_Bache.JPG" alt="Graduation Pic">
+            </div>
+            <div class="carousel-slide">
+              <img src="Grad_PIC.JPG" alt="Graduation">
+            </div>
+            <div class="carousel-slide">
+              <img src="Grad_asso.jpg" alt="Waeso">
+            </div>
+            <div class="carousel-slide">
+              <img src="Sports_Pic.JPG" alt="Sports">
+            </div>
+            <div class="carousel-slide">
+              <img src="Waeso_pic.jpg" alt="Waeso 2">
+            </div>
+            <div class="carousel-slide">
+              <img src="Wolvering.JPG" alt="Wolvering">
+            </div>
+          </div>
         </div>
+        <button class="carousel-button next">&#10095;</button>
       </div>
-    </section>
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -874,31 +906,6 @@
         updateButtonText();
       });
       <script>
-      const images = document.querySelectorAll('.carousel-image');
-      let currentIndex = 0;
-      
-      function showImage(index) {
-        images.forEach((img, i) => {
-          img.classList.toggle('active', i === index);
-        });
-      }
-      
-      document.querySelector('.carousel-btn.prev').addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(currentIndex);
-      });
-      
-      document.querySelector('.carousel-btn.next').addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
-      });
-      
-      // Optional autoplay every 5 seconds
-      setInterval(() => {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
-      }, 5000);
-      </script>
-    
+     
   </body>
 </html>
