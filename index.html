@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Marlon Mancilla | Portfolio</title>
@@ -12,7 +12,6 @@
         padding: 0;
         box-sizing: border-box;
       }
-
       body {
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         line-height: 1.6;
@@ -20,13 +19,11 @@
         background-color: #f3f4f6;
         transition: background-color 0.3s ease, color 0.3s ease;
       }
-
       /* Dark Mode */
       .dark body {
         background-color: #111827;
         color: #f9fafb;
       }
-
       /* Header */
       header {
         background-color: #ffffff;
@@ -36,11 +33,9 @@
         z-index: 100;
         transition: background-color 0.3s ease;
       }
-
       .dark header {
         background-color: #1f2937;
       }
-
       .header-container {
         max-width: 80rem;
         margin: 0 auto;
@@ -49,43 +44,36 @@
         justify-content: space-between;
         align-items: center;
       }
-
       .logo {
         font-size: 1.5rem;
         font-weight: 700;
         color: #2563eb;
         text-decoration: none;
       }
-
       .dark .logo {
         color: #60a5fa;
       }
-
       /* Navigation */
       nav {
         display: flex;
         gap: 2rem;
+        align-items: center;
       }
-
       nav a {
         color: #374151;
         text-decoration: none;
         font-weight: 500;
         transition: color 0.3s ease;
       }
-
       nav a:hover {
         color: #2563eb;
       }
-
       .dark nav a {
         color: #d1d5db;
       }
-
       .dark nav a:hover {
         color: #60a5fa;
       }
-      
       .nav-cv-button {
         background-color: #2563eb;
         color: white;
@@ -95,28 +83,23 @@
         transition: all 0.3s ease;
         margin-left: 0.5rem;
       }
-      
       .nav-cv-button:hover {
         background-color: #1d4ed8;
         transform: translateY(-1px);
       }
-      
       .dark .nav-cv-button {
         background-color: #60a5fa;
         color: #111827;
       }
-      
       .dark .nav-cv-button:hover {
         background-color: #3b82f6;
       }
-
       /* Expandable Projects */
       .project-summary {
         cursor: pointer;
         position: relative;
         padding-right: 2rem;
       }
-
       .project-summary::after {
         content: '↓';
         position: absolute;
@@ -125,35 +108,29 @@
         transform: translateY(-50%);
         transition: transform 0.3s ease;
       }
-
       .project-card.active .project-summary::after {
         transform: translateY(-50%) rotate(180deg);
       }
-
       .project-details {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease-out;
         padding: 0 1rem;
       }
-      
       .project-card.active .project-details {
         max-height: 500px;
         padding: 1rem;
         border-top: 1px solid #e5e7eb;
       }
-      
       .dark .project-card.active .project-details {
         border-top-color: #4b5563;
       }
-      
       .tech-stack {
         display: flex;
         gap: 0.5rem;
         flex-wrap: wrap;
         margin: 1rem 0;
       }
-      
       .tech-tag {
         background-color: #e5e7eb;
         padding: 0.25rem 0.75rem;
@@ -161,17 +138,14 @@
         font-size: 0.75rem;
         color: #374151;
       }
-      
       .dark .tech-tag {
         background-color: #4b5563;
         color: #f3f4f6;
       }
-      
       .project-links {
         display: flex;
         gap: 1rem;
       }
-      
       .code-link, .demo-link {
         padding: 0.5rem 1rem;
         border-radius: 0.375rem;
@@ -179,37 +153,22 @@
         text-decoration: none;
         transition: all 0.3s ease;
       }
-      
       .code-link {
         background-color: #e5e7eb;
         color: #1f2937;
       }
-      
       .demo-link {
         background-color: #2563eb;
         color: white;
       }
-      
       .dark .code-link {
         background-color: #4b5563;
         color: #f3f4f6;
       }
-      
       .dark .demo-link {
         background-color: #60a5fa;
         color: #111827;
       }
-      
-      @media (max-width: 768px) {
-        .project-card.active .project-details {
-          max-height: 800px;
-        }
-        
-        .project-links {
-          flex-direction: column;
-        }
-      }
-
       /* Dark Mode Toggle Button */
       .toggle-btn {
         background-color: #e5e7eb;
@@ -222,43 +181,35 @@
         cursor: pointer;
         transition: all 0.3s ease;
       }
-
       .toggle-btn:hover {
         background-color: #d1d5db;
       }
-
       .dark .toggle-btn {
         background-color: #374151;
         color: #f9fafb;
       }
-
       .dark .toggle-btn:hover {
         background-color: #4b5563;
       }
-
       /* Sections */
       section {
         padding: 4rem 0;
       }
-
       .section-container {
         max-width: 64rem;
         margin: 0 auto;
         padding: 0 1.5rem;
       }
-
       /* Hero Section */
       .hero {
         background-color: #eff6ff;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('James_Webb.jpg.webp'); 
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('James_Webb.jpg.webp');
         text-align: center;
         padding: 5rem 0;
       }
-
       .dark .hero {
         background-color: #1f2937;
       }
-
       .hero-container {
         display: flex;
         align-items: center;
@@ -268,39 +219,10 @@
         margin: 0 auto;
         padding: 0 1.5rem;
       }
-
       .hero-content {
         flex: 1;
         text-align: left;
       }
-
-      .hero-image {
-        flex: 0 0 250px;
-        width: 250px;
-        height: 300px;
-        background-color: #d1d5db;
-        border: 2px dashed #9ca3af;
-        border-radius: 0.75rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #6b7280;
-        font-size: 0.875rem;
-        text-align: center;
-        transition: all 0.3s ease;
-      }
-
-      .dark .hero-image {
-        background-color: #374151;
-        border-color: #6b7280;
-        color: #9ca3af;
-      }
-
-      .hero-image:hover {
-        border-color: #2563eb;
-        background-color: #e5e7eb;
-      }
-
       .hero-description-box {
         background-color: rgba(255, 255, 255, 0.7);
         padding: 1rem 1.5rem;
@@ -309,642 +231,265 @@
         margin-top: 1rem;
         color: #4b5563;
       }
-      
       .dark .hero-description-box {
         background-color: rgba(31, 41, 55, 0.7);
         color: #d1d5db;
       }
-
-      .dark .hero-image:hover {
-        border-color: #60a5fa;
-        background-color: #4b5563;
-      }
-
       .hero h2 {
-       font-size: 2.5rem;
-       font-weight: 700;
-       margin-bottom: 1rem;
-       color: #1f2937;
-       background-color: rgba(255, 255, 255, 0.6);
-       padding: 0.5rem 1rem;
-       border-radius: 0.5rem;
-       display: inline-block;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #1f2937;
+        background-color: rgba(255, 255, 255, 0.6);
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        display: inline-block;
       }
-
       .dark .hero h2 {
-       color: #f9fafb;
-       background-color: rgba(31, 41, 55, 0.8);
+        color: #f9fafb;
+        background-color: rgba(31, 41, 55, 0.8);
       }
-
       .hero p {
         font-size: 1.125rem;
         color: #4b5563;
         line-height: 1.6;
       }
-
       .dark .hero p {
         color: #d1d5db;
       }
-      /* Hero section layout */
-      .hero-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 2rem;
-        padding: 2rem;
-      }
-      
-      /* Main carousel container */
+
+      /* --- CORRECTED CAROUSEL STYLES --- */
       .hero-image-carousel {
         position: relative;
-        width: 80%; /* Or whatever width you want */
-        max-width: 800px;
-        margin: auto;
-      }
-      
-      /* This container hides the parts of the track that are off-screen */
-      .carousel-track-container {
+        width: 250px;
+        height: 300px;
         overflow: hidden;
-        border-radius: 0.75rem; /* Apply border-radius here */
+        border-radius: 0.75rem;
+        flex-shrink: 0; /* Prevents the carousel from shrinking */
       }
-      
-      /* The track holds all the slides and moves left/right */
-      .carousel-track {
-        display: flex; /* Aligns slides horizontally */
-        transition: transform 0.5s ease-in-out; /* Smooth sliding animation */
-      }
-      
-      /* Each slide takes up the full width of the container */
-      .carousel-slide {
-        flex: 0 0 100%;
+      .carousel-image {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
+        height: 100%;
+        object-fit: cover; /* Moved from inline style */
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
       }
-      
-      /* Your image styles - applied to all images in the carousel */
-      .carousel-slide img {
-        width: 100%;
-        height: 100%; /* Adjust if needed, e.g., auto */
-        object-fit: cover;
-        display: block; /* Removes extra space below image */
+      .carousel-image.active {
+        opacity: 1;
+        visibility: visible;
       }
-      
-      /* Styling for the navigation buttons */
-      .carousel-button {
+      .carousel-btn {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0,0,0,0.5);
         color: white;
         border: none;
-        font-size: 2rem;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem;
         cursor: pointer;
-        z-index: 10;
-        border-radius: 0.5rem;
+        font-size: 1.2rem;
+        line-height: 1;
+        border-radius: 50%;
+        z-index: 2;
+        opacity: 0.7;
+        transition: opacity 0.3s;
       }
-      
-      .carousel-button.prev {
-        left: 1rem;
+      .carousel-btn:hover {
+        opacity: 1;
       }
-      
-      .carousel-button.next {
-        right: 1rem;
-      }
-
-
-
-      /* Responsive Hero */
-      @media (max-width: 768px) {
-        .hero-container {
-          flex-direction: column;
-          text-align: center;
-        }
-        
-        .hero-content {
-          text-align: center;
-        }
-        
-        .hero-image {
-          flex: 0 0 200px;
-          width: 200px;
-          height: 240px;
-        }
-      }
+      .carousel-btn.prev { left: 10px; }
+      .carousel-btn.next { right: 10px; }
 
       /* About Section */
       .about {
         background-color: #ffffff;
-        text-align: center; 
+        text-align: center;
       }
-
       .dark .about {
         background-color: #111827;
       }
-
       .section-title {
         font-size: 1.5rem;
         font-weight: 600;
         margin-bottom: 1rem;
         color: #1f2937;
       }
-
       .dark .section-title {
         color: #e5e7eb;
       }
-
-      .about p {
-        color: #374151;
-        line-height: 1.75;
-      }
-
-      .dark .about p {
-        color: #d1d5db;
-      }
-
-      /* Projects Section */
-      .projects {
-        background-color: #f9fafb;
-      }
-
-      .dark .projects {
-        background-color: #1f2937;
-      }
-
-      .projects-grid {
-        display: grid;
-        gap: 1.5rem;
-        margin-top: 1.5rem;
-      }
-
-      @media (min-width: 768px) {
-        .projects-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      .project-card {
-        background-color: #ffffff;
-        padding: 1.5rem;
-        border-radius: 0.5rem;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .project-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-      }
-
-      .dark .project-card {
-        background-color: #374151;
-      }
-
-      .project-title {
-        font-size: 1.25rem;
-        font-weight: 700;
-        margin-bottom: 0.5rem;
-        color: #1f2937;
-      }
-
-      .dark .project-title {
-        color: #f9fafb;
-      }
-
-      .project-description {
-        color: #4b5563;
-      }
-
-      .dark .project-description {
-        color: #d1d5db;
-      }
-
-      /* And more text */
-      .and-more {
-        text-align: center;
-        margin-top: 2rem;
-        font-style: italic;
-        color: #6b7280;
-      }
-
-      .dark .and-more {
-        color: #9ca3af;
-      }
-
-      /* Contact Section */
-      .contact {
-        background-color: #ffffff;
-        text-align: center;
-      }
-
-      .dark .contact {
-        background-color: #111827;
-      }
-
-      .contact p {
-        color: #4b5563;
-        margin-bottom: 1.5rem;
-      }
-
-      .dark .contact p {
-        color: #d1d5db;
-      }
-
-      .cta-button {
-        display: inline-block;
-        background-color: #2563eb;
-        color: #ffffff;
-        padding: 0.75rem 1.5rem;
-        border-radius: 0.5rem;
-        text-decoration: none;
-        font-weight: 600;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-      }
-
-      .cta-button:hover {
-        background-color: #1d4ed8;
-        transform: translateY(-1px);
-      }
-
-      /* Footer */
-      footer {
-        background-color: #f3f4f6;
-        color: #6b7280;
-        text-align: center;
-        padding: 1.5rem;
-        font-size: 0.875rem;
-      }
-
-      .dark footer {
-        background-color: #111827;
-        color: #9ca3af;
-      }
-
-      /* Smooth Scrolling */
-      html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 100px;
-      }
-
-      /* Responsive Design */
+      /* Other styles... */
+      .about p { color: #374151; line-height: 1.75; }
+      .dark .about p { color: #d1d5db; }
+      .projects { background-color: #f9fafb; }
+      .dark .projects { background-color: #1f2937; }
+      .projects-grid { display: grid; gap: 1.5rem; margin-top: 1.5rem; }
+      @media (min-width: 768px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+      .project-card { background-color: #ffffff; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+      .project-card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+      .dark .project-card { background-color: #374151; }
+      .project-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: #1f2937; }
+      .dark .project-title { color: #f9fafb; }
+      .project-description { color: #4b5563; }
+      .dark .project-description { color: #d1d5db; }
+      .and-more { text-align: center; margin-top: 2rem; font-style: italic; color: #6b7280; }
+      .dark .and-more { color: #9ca3af; }
+      .contact { background-color: #ffffff; text-align: center; }
+      .dark .contact { background-color: #111827; }
+      .contact p { color: #4b5563; margin-bottom: 1.5rem; }
+      .dark .contact p { color: #d1d5db; }
+      .cta-button { display: inline-block; background-color: #2563eb; color: #ffffff; padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; transition: background-color 0.3s ease, transform 0.3s ease; }
+      .cta-button:hover { background-color: #1d4ed8; transform: translateY(-1px); }
+      footer { background-color: #f3f4f6; color: #6b7280; text-align: center; padding: 1.5rem; font-size: 0.875rem; }
+      .dark footer { background-color: #111827; color: #9ca3af; }
+      html { scroll-behavior: smooth; scroll-padding-top: 100px; }
       @media (max-width: 768px) {
-        .header-container {
-          flex-direction: column;
-          gap: 1rem;
-        }
-        
-        nav {
-          gap: 1rem;
-        }
-        
-        .hero h2 {
-          font-size: 2rem;
-        }
-        
-        .hero p {
-          font-size: 1rem;
-        }
+        .header-container { flex-direction: column; gap: 1rem; }
+        nav { gap: 1rem; }
+        .hero h2 { font-size: 2rem; }
+        .hero p { font-size: 1rem; }
+        .hero-container { flex-direction: column; text-align: center; }
+        .hero-content { text-align: center; }
       }
     </style>
-  </head>
+</head>
 
-  <body>
-    <!-- Hero Section -->
+<body>
     <header>
-      <div class="header-container">
-        <h1 class="logo">Marlon Mancilla</h1>
-        <nav>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-          <a href="Mancilla_Marlon_Resume.pdf" download class="nav-cv-button">Download CV</a>
-        </nav>
-        <button id="toggleDark" class="toggle-btn">
-          🌙 Dark Mode
-        </button>
-      </div>
+        <div class="header-container">
+            <h1 class="logo">Marlon Mancilla</h1>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <a href="Mancilla_Marlon_Resume.pdf" download class="nav-cv-button">Download CV</a>
+            </nav>
+            <button id="toggleDark" class="toggle-btn">🌙 Dark Mode</button>
+        </div>
     </header>
 
-    <!-- Intro Section -->
     <section class="hero">
-      <div class="hero-container">
-        <div class="hero-content">
-          <h2>Hi, I'm Marlon 👋</h2>
-          <p class="hero-description-box">
-            Physics graduate, tech enthusiast, and problem-solver focused on
-            turning ideas into real-world solutions through data, code, and
-            innovation.
-          </p>
+        <div class="hero-container">
+            <div class="hero-content">
+                <h2>Hi, I'm Marlon 👋</h2>
+                <p class="hero-description-box">
+                    Physics graduate, tech enthusiast, and problem-solver focused on
+                    turning ideas into real-world solutions through data, code, and
+                    innovation.
+                </p>
+            </div>
+            <div class="hero-image-carousel">
+                <img src="Foto_mia.jpg" alt="Marlon Mancilla" class="carousel-image active">
+                <img src="Amigos.jpg" alt="Amigos" class="carousel-image">
+                <img src="Cowboy_Pic.JPG" alt="Cowboy_pic" class="carousel-image">
+                <img src="Foto_Jpn.JPG" alt="Foto Japon" class="carousel-image">
+                <img src="Foto_Jpn2.JPEG" alt="Foto Japon 2" class="carousel-image">
+                <img src="Foto_Jpn3.JPG" alt="Foto Japon 3" class="carousel-image">
+                <img src="Foto_Jpn4.JPG" alt="Foto Japon 4" class="carousel-image">
+                <img src="Grad_Bache.JPG" alt="Graduation Pic" class="carousel-image">
+                <img src="Grad_PIC.JPG" alt="Graduation" class="carousel-image">
+                <img src="Grad_asso.jpg" alt="Waeso" class="carousel-image">
+                <img src="Sports_Pic.JPG" alt="Sports" class="carousel-image">
+                <img src="Waeso_pic.jpg" alt="Waeso 2" class="carousel-image">
+                <img src="Wolvering.JPG" alt="Wolvering" class="carousel-image">
+                
+                <button class="carousel-btn prev">❮</button>
+                <button class="carousel-btn next">❯</button>
+            </div>
         </div>
-      <div class="hero-image-carousel">
-        <button class="carousel-button prev">&#10094;</button>
-        <div class="carousel-track-container">
-          <div class="carousel-track">
-            <div class="carousel-slide">
-              <img src="Foto_mia.jpg" alt="Marlon Mancilla">
-            </div>
-            <div class="carousel-slide">
-              <img src="Amigos.jpg" alt="Amigos">
-            </div>
-            <div class="carousel-slide">
-              <img src="Cowboy_Pic.JPG" alt="Cowboy_pic">
-            </div>
-            <div class="carousel-slide">
-              <img src="Foto_Jpn.JPG" alt="Foto Japon">
-            </div>
-            <div class="carousel-slide">
-              <img src="Foto_Jpn2.JPEG" alt="Foto Japon 2">
-            </div>
-            <div class="carousel-slide">
-              <img src="Foto_Jpn3.JPG" alt="Foto Japon 3">
-            </div>
-            <div class="carousel-slide">
-              <img src="Foto_Jpn4.JPG" alt="Foto Japon 4">
-            </div>
-            <div class="carousel-slide">
-              <img src="Grad_Bache.JPG" alt="Graduation Pic">
-            </div>
-            <div class="carousel-slide">
-              <img src="Grad_PIC.JPG" alt="Graduation">
-            </div>
-            <div class="carousel-slide">
-              <img src="Grad_asso.jpg" alt="Waeso">
-            </div>
-            <div class="carousel-slide">
-              <img src="Sports_Pic.JPG" alt="Sports">
-            </div>
-            <div class="carousel-slide">
-              <img src="Waeso_pic.jpg" alt="Waeso 2">
-            </div>
-            <div class="carousel-slide">
-              <img src="Wolvering.JPG" alt="Wolvering">
-            </div>
-          </div>
-        </div>
-        <button class="carousel-button next">&#10095;</button>
-      </div>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-      <div class="section-container">
-        <h3 class="section-title">About Me</h3>
-        <p>
-          I'm passionate about engineering, programming, and building meaningful
-          projects. With a solid background in physics and hands-on experience
-          in research and development, I love exploring new tools,
-          collaborating with others, and constantly learning.
-        </p>
-      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-      <div class="section-container">
-        <h3 class="section-title">Projects</h3>
-        <div class="projects-grid">
-          <!-- Project 1 -->
-          <div class="project-card">
-            <div class="project-summary">
-              <h4 class="project-title">Sonar with Arduino</h4>
-              <p class="project-description">
-                A scanning radar system using an ultrasonic sensor and servo
-                motor, visualized in real-time with Python.
-              </p>
-            </div>
-            <div class="project-details">
-              <div class="tech-stack">
-                <span class="tech-tag">Arduino</span>
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Signal Processing</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="code-link">View Code</a>
-                <a href="#" class="demo-link">See Demo</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div class="project-card">
-            <div class="project-summary">
-              <h4 class="project-title">Interferometry Project</h4>
-              <p class="project-description">
-                I built an interferometry system to observe live cultivated cells, capturing nanoscale structural changes without physical contact.
-              </p>
-            </div>
-            <div class="project-details">
-              <div class="tech-stack">
-                <span class="tech-tag">Optics</span>
-                <span class="tech-tag">MATLAB</span>
-                <span class="tech-tag">Lab Equipment</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="code-link">View Code</a>
-                <a href="#" class="demo-link">See Photos</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div class="project-card">
-            <div class="project-summary">
-              <h4 class="project-title">AI Calendar Assistant</h4>
-              <p class="project-description">
-                Built a smart calendar agent that understands natural language to move, prioritize, and optimize events using Python and Google Calendar API.
-              </p>
-            </div>
-            <div class="project-details">
-              <div class="tech-stack">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">NLP</span>
-                <span class="tech-tag">Google API</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="code-link">View Code</a>
-                <a href="#" class="demo-link">Try Demo</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 4 -->
-          <div class="project-card">
-            <div class="project-summary">
-              <h4 class="project-title">Arduino Blood Pressure Monitor</h4>
-              <p class="project-description">
-                Designed and programmed a blood pressure sensor using Arduino and C++, enabling real-time measurements from a medical-grade sensor.
-              </p>
-            </div>
-            <div class="project-details">
-              <div class="tech-stack">
-                <span class="tech-tag">Arduino</span>
-                <span class="tech-tag">C++</span>
-                <span class="tech-tag">Medical Devices</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="code-link">View Code</a>
-                <a href="#" class="demo-link">See Demo</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 5 -->
-          <div class="project-card">
-            <div class="project-summary">
-              <h4 class="project-title">Wave Equation Simulation</h4>
-              <p class="project-description">
-                A MATLAB simulation exploring the wave equation's behavior across different atomic numbers.
-              </p>
-            </div>
-            <div class="project-details">
-              <div class="tech-stack">
-                <span class="tech-tag">MATLAB</span>
-                <span class="tech-tag">Numerical Methods</span>
-                <span class="tech-tag">Physics</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="code-link">View Code</a>
-                <a href="#" class="demo-link">See Simulation</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 6 -->
-          <div class="project-card">
-            <div class="project-summary">
-              <h4 class="project-title">Gravity Wave Data System</h4>
-              <p class="project-description">
-                Custom code for a built camera to acquire and process data for gravity wave research.
-              </p>
-            </div>
-            <div class="project-details">
-              <div class="tech-stack">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Data Acquisition</span>
-                <span class="tech-tag">Camera Systems</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="code-link">View Code</a>
-                <a href="#" class="demo-link">See Results</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p class="and-more">And more...</p>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-      <div class="section-container">
-        <h3 class="section-title">Get in Touch</h3>
-        <p>
-          Interested in collaborating or just want to connect? Reach out!
-        </p>
-        <a href="mailto:your.email@example.com" class="cta-button">Email Me</a>
-      </div>
-    </section>
+    <section id="about" class="about"></section>
+    <section id="projects" class="projects"></section>
+    <section id="contact" class="contact"></section>
 
     <footer>
-      © 2025 Marlon Mancilla. All rights reserved.
+        © 2025 Marlon Mancilla. All rights reserved.
     </footer>
-  
+
     <script>
-      // --- Carousel Functionality ---
-      const track = document.querySelector('.carousel-track');
-      // Check if the track exists before running carousel code
-      if (track) {
-        const slides = Array.from(track.children);
-        const nextButton = document.querySelector('.carousel-button.next');
-        const prevButton = document.querySelector('.carousel-button.prev');
-        const slideWidth = slides.length > 0 ? slides[0].getBoundingClientRect().width : 0;
-  
+        // --- Carousel Functionality ---
+        const images = document.querySelectorAll('.carousel-image');
+        const prevBtn = document.querySelector('.carousel-btn.prev');
+        const nextBtn = document.querySelector('.carousel-btn.next');
         let currentIndex = 0;
-  
-        const moveToSlide = (track, targetIndex) => {
-          if (track) {
-            track.style.transform = 'translateX(-' + slideWidth * targetIndex + 'px)';
-            currentIndex = targetIndex;
-          }
-        };
-  
-        if (nextButton && prevButton) {
-          nextButton.addEventListener('click', e => {
-            let nextIndex = currentIndex + 1;
-            if (nextIndex >= slides.length) {
-              nextIndex = 0; // Loop back to the start
-            }
-            moveToSlide(track, nextIndex);
-          });
-  
-          prevButton.addEventListener('click', e => {
-            let prevIndex = currentIndex - 1;
-            if (prevIndex < 0) {
-              prevIndex = slides.length - 1; // Loop to the end
-            }
-            moveToSlide(track, prevIndex);
-          });
+        let autoplayInterval;
+
+        function showImage(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+            });
         }
-      }
-  
-      // --- Project Card Expansion ---
-      document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('click', function(e) {
-          // Don't toggle if clicking on links inside the card
-          if (e.target.closest('a')) return;
-  
-          const isActive = this.classList.contains('active');
-  
-          // Close all other open cards
-          document.querySelectorAll('.project-card.active').forEach(otherCard => {
-            otherCard.classList.remove('active');
-          });
-  
-          // Toggle this card (re-add 'active' if it wasn't the one being closed)
-          if (!isActive) {
-            this.classList.add('active');
-          }
-  
-          // Scroll to project if it's expanding (for mobile)
-          if (this.classList.contains('active') && window.innerWidth < 768) {
-            this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-          }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        }
+        
+        function startAutoplay() {
+            // Run every 4 seconds
+            autoplayInterval = setInterval(nextImage, 4000);
+        }
+
+        function stopAutoplay() {
+            clearInterval(autoplayInterval);
+        }
+
+        // Event Listeners for buttons
+        nextBtn.addEventListener('click', () => {
+            nextImage();
+            stopAutoplay(); // Optional: stop autoplay on manual click
+            startAutoplay(); // Optional: restart autoplay timer after click
         });
-      });
-  
-      // --- CV Download Tracking ---
-      const cvButton = document.querySelector('.nav-cv-button');
-      if (cvButton) {
-        cvButton.addEventListener('click', function() {
-          console.log('CV downloaded');
+        
+        prevBtn.addEventListener('click', () => {
+            prevImage();
+            stopAutoplay(); // Optional: stop autoplay on manual click
+            startAutoplay(); // Optional: restart autoplay timer after click
         });
-      }
-      
-      // --- Force page to start at the top on loading ---
-      window.addEventListener('load', function() {
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-        }, 10);
-      });
-  
-      // --- Dark Mode Toggle ---
-      const toggleDarkBtn = document.getElementById("toggleDark");
-      const html = document.documentElement;
-  
-      if (toggleDarkBtn) {
+
+        // Start the autoplay when the page loads
+        startAutoplay();
+
+        // --- Project Card Expansion ---
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (e.target.closest('a')) return;
+                const isActive = this.classList.contains('active');
+                document.querySelectorAll('.project-card.active').forEach(otherCard => {
+                    otherCard.classList.remove('active');
+                });
+                if (!isActive) {
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // --- Dark Mode Toggle ---
+        const toggleDarkBtn = document.getElementById("toggleDark");
+        const html = document.documentElement;
         let isDarkMode = html.classList.contains("dark");
-  
+
         function updateButtonText() {
-          toggleDarkBtn.innerHTML = isDarkMode ? "☀️ Light Mode" : "🌙 Dark Mode";
+            toggleDarkBtn.innerHTML = isDarkMode ? "☀️ Light Mode" : "🌙 Dark Mode";
         }
-  
         updateButtonText();
-  
         toggleDarkBtn.addEventListener("click", () => {
-          isDarkMode = !isDarkMode;
-          html.classList.toggle("dark");
-          updateButtonText();
+            isDarkMode = !isDarkMode;
+            html.classList.toggle("dark");
+            updateButtonText();
         });
-      }
+
+        // --- Other Scripts (Scroll to top, etc.) ---
+        window.addEventListener('load', () => window.scrollTo(0, 0));
     </script>
-  
 </body>
-</html> 
+</html>
