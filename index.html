@@ -345,6 +345,49 @@
       .dark .hero p {
         color: #d1d5db;
       }
+      .hero-image-carousel {
+        position: relative;
+        width: 250px;
+        height: 300px;
+        overflow: hidden;
+        border-radius: 0.75rem;
+      }
+      
+      .carousel-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+      
+      .carousel-image.active {
+        opacity: 1;
+      }
+      
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0,0,0,0.5);
+        color: white;
+        border: none;
+        padding: 0.5rem;
+        cursor: pointer;
+        font-size: 1.2rem;
+        border-radius: 50%;
+      }
+      
+      .carousel-btn.prev { left: 10px; }
+      .carousel-btn.next { right: 10px; }
+      
+      .carousel-btn:hover {
+        background-color: rgba(0,0,0,0.8);
+      }
+
 
       /* Responsive Hero */
       @media (max-width: 768px) {
@@ -570,6 +613,23 @@
         </div>
         <div class="hero-image">
           <img src="Foto_mia.jpg" alt="Marlon Mancilla" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem;">
+          <img src="Amigos.jpg" alt="Amigos" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem;">
+          <img src="Cowboy_Pic.JPG" alt="Cowboy_pic" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem;">
+          <img src="Foto_Jpn.JPG" alt="Foto Japon" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem;">
+          <img src="Foto_Jpn2.JPEG" alt="Foto Japon 2" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem;">
+          <img src="Foto_Jpn3.JPG" alt="Foto Japon 3" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem;">
+          <img src="Foto_Jpn4.JPG" alt="Foto Japon 4" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem;">
+          <img src="Grad_Bache.JPG" alt="Graduation Pic" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem;">
+          <img src="Grad_PIC.JPG" alt="Graduation" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem;">
+          <img src="Grad_asso.jpg" alt="Waeso" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem;">
+          <img src="Sports_Pic.JPG" alt="Sports" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem;">
+          <img src="Waeso_pic.jpg" alt="Waeso 2" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem;">
+          <img src="Wolvering.JPG" alt="Wolvering" style="width: 100%; height: 100%; object-fit: cover; border-radius: 0.75rem;">
+          
+          
+          
+          <button class="carousel-btn prev">❮</button>
+          <button class="carousel-btn next">❯</button>
         </div>
       </div>
     </section>
@@ -796,6 +856,32 @@
         html.classList.toggle("dark");
         updateButtonText();
       });
+      const images = document.querySelectorAll('.carousel-image');
+      let currentIndex = 0;
+      
+      function showImage(index) {
+        images.forEach((img, i) => {
+          img.classList.toggle('active', i === index);
+        });
+      }
+      
+      document.querySelector('.carousel-btn.prev').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+      });
+      
+      document.querySelector('.carousel-btn.next').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      });
+      
+      // Optional: Auto-play every 5 seconds
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+      }, 5000);
+
     </script>
+    
   </body>
 </html>
