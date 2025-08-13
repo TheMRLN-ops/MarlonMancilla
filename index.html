@@ -846,66 +846,105 @@
     <footer>
       © 2025 Marlon Mancilla. All rights reserved.
     </footer>
-
+  
     <script>
-      // Project Card Expansion
+      // --- Carousel Functionality ---
+      const track = document.querySelector('.carousel-track');
+      // Check if the track exists before running carousel code
+      if (track) {
+        const slides = Array.from(track.children);
+        const nextButton = document.querySelector('.carousel-button.next');
+        const prevButton = document.querySelector('.carousel-button.prev');
+        const slideWidth = slides.length > 0 ? slides[0].getBoundingClientRect().width : 0;
+  
+        let currentIndex = 0;
+  
+        const moveToSlide = (track, targetIndex) => {
+          if (track) {
+            track.style.transform = 'translateX(-' + slideWidth * targetIndex + 'px)';
+            currentIndex = targetIndex;
+          }
+        };
+  
+        if (nextButton && prevButton) {
+          nextButton.addEventListener('click', e => {
+            let nextIndex = currentIndex + 1;
+            if (nextIndex >= slides.length) {
+              nextIndex = 0; // Loop back to the start
+            }
+            moveToSlide(track, nextIndex);
+          });
+  
+          prevButton.addEventListener('click', e => {
+            let prevIndex = currentIndex - 1;
+            if (prevIndex < 0) {
+              prevIndex = slides.length - 1; // Loop to the end
+            }
+            moveToSlide(track, prevIndex);
+          });
+        }
+      }
+  
+      // --- Project Card Expansion ---
       document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('click', function(e) {
           // Don't toggle if clicking on links inside the card
-          if (e.target.tagName === 'A') return;
-          
-          // Close other open cards first
-          document.querySelectorAll('.project-card').forEach(otherCard => {
-            if (otherCard !== this && otherCard.classList.contains('active')) {
-              otherCard.classList.remove('active');
-            }
+          if (e.target.closest('a')) return;
+  
+          const isActive = this.classList.contains('active');
+  
+          // Close all other open cards
+          document.querySelectorAll('.project-card.active').forEach(otherCard => {
+            otherCard.classList.remove('active');
           });
-          
-          // Toggle this card
-          this.classList.toggle('active');
-          
+  
+          // Toggle this card (re-add 'active' if it wasn't the one being closed)
+          if (!isActive) {
+            this.classList.add('active');
+          }
+  
           // Scroll to project if it's expanding (for mobile)
           if (this.classList.contains('active') && window.innerWidth < 768) {
             this.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
           }
         });
       });
-
-      // CV Download Tracking
-      document.querySelector('.nav-cv-button').addEventListener('click', function() {
-        console.log('CV downloaded');
-      });
-
-      // Force page to start at the top when loading
-      window.addEventListener('beforeunload', function() {
-        window.scrollTo(0, 0);
-      });
+  
+      // --- CV Download Tracking ---
+      const cvButton = document.querySelector('.nav-cv-button');
+      if (cvButton) {
+        cvButton.addEventListener('click', function() {
+          console.log('CV downloaded');
+        });
+      }
       
-      // Also ensure we start at top on page load
+      // --- Force page to start at the top on loading ---
       window.addEventListener('load', function() {
         setTimeout(() => {
           window.scrollTo(0, 0);
-        }, 50);
+        }, 10);
       });
-      
-      // Dark Mode Toggle
+  
+      // --- Dark Mode Toggle ---
       const toggleDarkBtn = document.getElementById("toggleDark");
       const html = document.documentElement;
-      
-      let isDarkMode = html.classList.contains("dark");
-      
-      function updateButtonText() {
-        toggleDarkBtn.innerHTML = isDarkMode ? "☀️ Light Mode" : "🌙 Dark Mode";
-      }
-      
-      updateButtonText();
-
-      toggleDarkBtn.addEventListener("click", () => {
-        isDarkMode = !isDarkMode;
-        html.classList.toggle("dark");
+  
+      if (toggleDarkBtn) {
+        let isDarkMode = html.classList.contains("dark");
+  
+        function updateButtonText() {
+          toggleDarkBtn.innerHTML = isDarkMode ? "☀️ Light Mode" : "🌙 Dark Mode";
+        }
+  
         updateButtonText();
-      });
-      <script>
-     
-  </body>
-</html>
+  
+        toggleDarkBtn.addEventListener("click", () => {
+          isDarkMode = !isDarkMode;
+          html.classList.toggle("dark");
+          updateButtonText();
+        });
+      }
+    </script>
+  
+</body>
+</html> 
