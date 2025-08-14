@@ -379,14 +379,16 @@
       margin-top: 10px;
     }
     .project-image{
-      max-width: 100%;
+      max-width: 25%;
       border-radius: 8px;
     }
     
   </style>
 </head>
 <body>
-
+  
+<!-- THE MAIN FRONT PAGE STUFF -->
+  
   <header>
     <div class="header-container">
       <h1 class="logo">Marlon Mancilla</h1>
@@ -400,6 +402,8 @@
     </div>
   </header>
 
+<!-- FIRST TEXT ABOUT ME -->
+  
   <section class="hero">
     <div class="hero-container">
       <div class="hero-content">
@@ -410,6 +414,7 @@
           innovation.
         </p>
       </div>
+      <!-- MY PICTURES -->
       <div class="hero-image-carousel">
         <img src="Foto_mia.jpg" alt="Marlon Mancilla" class="carousel-image active">
         <img src="Amigos.jpg" alt="Amigos" class="carousel-image">
@@ -423,12 +428,15 @@
         <img src="Sports_Pic.JPG" alt="Sports" class="carousel-image">
         <img src="Waeso_pic.jpg" alt="Waeso 2" class="carousel-image">
         <img src="Wolvering.JPG" alt="Wolvering" class="carousel-image">
+
+        <!-- CLICKABLE BUTTONG PICTURES -->
         <button class="carousel-btn prev">❮</button>
         <button class="carousel-btn next">❯</button>
       </div>
     </div>
   </section>
 
+  <!-- MORE ABOUT ME -->
   <section id="about" class="about">
     <div class="section-container">
       <h2 class="section-title">About Me</h2>
@@ -441,12 +449,15 @@
     </div>
   </section>
 
+  <!-- LIST OF PROJECTS -->
   <section id="projects" class="projects">
     <div class="section-container">
       <h2 class="section-title">My Projects</h2>
       <div class="projects-grid">
         <div class="project-card" onclick="toggleImage(this)">
           <div class="project-summary">
+
+            <!-- SONAR WITH ARDUINO -->
             <h4 class="project-title">Sonar with Arduino</h4>
             <p class="project-description">A scanning radar system using an ultrasonic sensor and servo motor, visualized in real-time with Python.</p>
             <div class="project-image">
@@ -460,6 +471,8 @@
         </div>
         <div class="project-card">
           <div class="project-summary">
+
+            <!-- INTERFEROMETRY PROJECT -->
             <h4 class="project-title">Interferometry Project</h4>
             <p class="project-description">I built an interferometry system to observe live cultivated cells, capturing nanoscale structural changes without physical contact.</p>
           </div>
@@ -470,6 +483,8 @@
         </div>
         <div class="project-card">
           <div class="project-summary">
+
+            <!-- AI CALENDAR -->
             <h4 class="project-title">AI Calendar Assistant</h4>
             <p class="project-description">Built a smart calendar agent that understands natural language to move, prioritize, and optimize events using Python and Google Calendar API.</p>
           </div>
@@ -480,6 +495,8 @@
         </div>
         <div class="project-card">
           <div class="project-summary">
+
+            <!-- BLOOD PRESSURE DEVICE -->
             <h4 class="project-title">Arduino Blood Pressure Monitor</h4>
             <p class="project-description">Designed and programmed a blood pressure sensor using Arduino and C++, enabling real-time measurements from a medical-grade sensor.</p>
           </div>
@@ -489,9 +506,13 @@
           </div>
         </div>
       </div>
+
+      <!-- MORE PROJECTS -->
       <p class="and-more">And more...</p>
     </div>
   </section>
+
+  <!-- CONTACT SECTIONS -->
 
   <section id="contact" class="contact">
     <div class="section-container">
