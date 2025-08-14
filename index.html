@@ -374,6 +374,15 @@
         text-align: center;
       }
     }
+    .project-image{
+      display: none;
+      margin-top: 10px;
+    }
+    .project-image{
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    
   </style>
 </head>
 <body>
@@ -436,10 +445,13 @@
     <div class="section-container">
       <h2 class="section-title">My Projects</h2>
       <div class="projects-grid">
-        <div class="project-card">
+        <div class="project-card" onclick="toggleImage(this)">
           <div class="project-summary">
             <h4 class="project-title">Sonar with Arduino</h4>
             <p class="project-description">A scanning radar system using an ultrasonic sensor and servo motor, visualized in real-time with Python.</p>
+            <div class="project-image">
+              <img src="SonarArduino.jpg" alt="Sonar Project Demo">
+          </div>
           </div>
           <div class="project-details">
             <div class="tech-stack"><span class="tech-tag">Arduino</span><span class="tech-tag">Python</span><span class="tech-tag">Signal Processing</span></div>
@@ -577,6 +589,12 @@
 
     // --- Scroll to top on load ---
     window.addEventListener('load', () => window.scrollTo(0, 0));
+    
+    function toggleImage(card) {
+      const imgDiv = card.querySelector(".project-image");
+      imgDiv.style.display = imgDiv.style.display === "block" ? "none" : "block";
+    }
+    
   </script>
 
 </body>
